@@ -1,0 +1,1 @@
+Just a static folder for ttrpgs
