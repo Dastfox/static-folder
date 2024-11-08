@@ -9,6 +9,7 @@ function connectWebSocket() {
     ws.onopen = () => {
         console.log('WebSocket connected');
         reconnectAttempts = 0;
+        initializeJournalButtonState().then(() => {});
     };
 
     ws.onmessage = (event) => {
