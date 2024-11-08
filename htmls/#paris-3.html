@@ -1,0 +1,319 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Le Matin - 1932</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        body {
+            font-family: 'IM Fell English', 'Times New Roman', serif;
+            background-color: #1c2e4a;
+            color: #2b2b2b;
+            line-height: 1.6;
+            max-width: 1000px;
+            min-height: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .newspaper {
+            background-color: #f4f1e8;
+            border: 1px solid #8b7355;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .newspaper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px double #2b2b2b;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header::before,
+        .header::after {
+            content: '❧';
+            font-size: 24px;
+            position: absolute;
+            bottom: -12px;
+            background: #f4f1e8;
+            padding: 0 10px;
+        }
+
+        .header::before {
+            left: 20%;
+        }
+
+        .header::after {
+            right: 20%;
+        }
+
+        .newspaper-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            line-height: 1;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .newspaper-subtitle {
+            font-style: italic;
+            font-size: 18px;
+            margin: 10px 0;
+            color: #4a4a4a;
+        }
+
+        .date {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 16px;
+            border-top: 1px solid #2b2b2b;
+            border-bottom: 1px solid #2b2b2b;
+            display: inline-block;
+            padding: 5px 20px;
+        }
+
+        .columns {
+            column-count: 2;
+            column-gap: 40px;
+            column-rule: 1px solid #ccc;
+        }
+
+        .article {
+            margin-bottom: 40px;
+            break-inside: avoid-column;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .article::after {
+            content: '§';
+            font-size: 24px;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b7355;
+        }
+
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 1.2;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .article-title::before,
+        .article-title::after {
+            content: '—';
+            color: #8b7355;
+            margin: 0 10px;
+        }
+
+        .article-text {
+            text-align: justify;
+            font-size: 16px;
+            /*text-indent: 20px;*/
+            hyphens: auto;
+        }
+
+        .article-text::first-letter {
+            font-size: 300%;
+            float: left;
+            line-height: 1;
+            margin: 0 5px 0 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .author {
+            font-style: italic;
+            margin: 10px 0;
+            text-align: right;
+            font-size: 14px;
+            color: #4a4a4a;
+        }
+
+        .author::before {
+            content: 'Par ';
+        }
+
+        blockquote {
+            margin: 20px 40px;
+            padding-left: 20px;
+            border-left: 2px solid #8b7355;
+            font-style: italic;
+            font-size: 15px;
+            color: #4a4a4a;
+            position: relative;
+        }
+
+        blockquote::before,
+        blockquote::after {
+            content: '"';
+            font-size: 36px;
+            color: #8b7355;
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+        }
+
+        blockquote::before {
+            left: -20px;
+            top: -10px;
+        }
+
+        blockquote::after {
+            right: -20px;
+            bottom: -20px;
+        }
+
+        .price {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-family: 'Playfair Display', serif;
+            border: 2px solid #2b2b2b;
+            padding: 5px 10px;
+            transform: rotate(5deg);
+            font-weight: bold;
+        }
+
+        .edition {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-style: italic;
+            color: #4a4a4a;
+        }
+    </style>
+</head>
+<body>
+<div class="newspaper">
+    <div class="edition">Édition du Matin</div>
+
+    <header class="header">
+        <h1 class="newspaper-name">Le Matin</h1>
+        <div class="newspaper-subtitle">Journal Quotidien d'Information</div>
+        <p class="date">Dimanche 8 mai 1932</p>
+    </header>
+
+    <div class="columns">
+        <article class="article">
+            <h2 class="article-title">Assassinat de Doumer : Un Acte Isolé ou un Complot ?</h2>
+            <p class="author">André Masson</p>
+            <div class="article-content">
+                <p class="article-text">
+                    La France demeure en état de choc après la mort de Paul Doumer, président de la République,
+                    assassiné par Paul Gorguloff, un médecin russe. Bien que le meurtrier ait été décrit comme un loup
+                    solitaire, des témoins l'auraient vu en compagnie d'étrangers dans Montmartre peu avant l'attentat.
+                    Certains membres du gouvernement murmurent que l'attaque pourrait être le résultat d'un complot plus
+                    vaste, mais pour l'instant, les autorités se bornent à qualifier cet acte de "solitaire". La
+                    population reste dans l'expectative, suspendue aux révélations que pourrait apporter l'enquête en
+                    cours.
+                </p>
+            </div>
+        </article>
+
+        <article class="article">
+            <h2 class="article-title">Vol Inexpliqué au Palais de l'Élysée</h2>
+            <p class="author">Claire Beaumont</p>
+            <div class="article-content">
+                <p class="article-text">
+                    Les autorités ont rapporté la disparition d'un objet non identifié dans les sous-sols du Palais de
+                    l'Élysée. Aucun détail n'a été divulgué sur la nature de cet objet, mais le vol a été confirmé par
+                    une source proche de l'enquête. Ce mystère intrigue d'autant plus que la disparition a été constatée
+                    peu après l'assassinat de Paul Doumer. Bien que les autorités ne fassent aucun lien officiel entre
+                    les deux événements, la coïncidence soulève de nombreuses questions dans les cercles politiques et
+                    journalistiques.
+                </p>
+            </div>
+        </article>
+
+        <article class="article">
+            <h2 class="article-title">Les Cercles Anarchistes Sous Surveillance Accrue</h2>
+            <p class="author">Jules Durand</p>
+            <div class="article-content">
+                <p class="article-text">
+                    Depuis la mort de Paul Doumer, la police a intensifié la surveillance des milieux anarchistes
+                    parisiens, notamment dans le quartier de Montmartre. Plusieurs descentes ont eu lieu, menant à des
+                    arrestations ciblant des individus connus pour leurs discours anti-gouvernementaux. Bien qu'aucun
+                    lien direct avec l'assassinat du président n'ait été établi, des documents suspects ont été saisis
+                    lors de ces opérations, suscitant des soupçons de possibles connexions avec des groupes étrangers.
+                    Le préfet de police, Jacques Chiappe, a promis de sévir contre toute menace visant la République.
+                </p>
+            </div>
+        </article>
+
+        <article class="article">
+            <h2 class="article-title">La Presse Américaine Évoque des 'Forces Occultes' à Paris</h2>
+            <p class="author">Hélène Renaud</p>
+            <div class="article-content">
+                <p class="article-text">
+                    Depuis New York, notre correspondante rapporte que la presse américaine s'intéresse de près aux
+                    récents événements parisiens. Des journaux comme le New York Herald et le Chicago Tribune spéculent
+                    sur l'influence de forces secrètes à l'œuvre dans la capitale française. Un éditorial du New York
+                    Times évoque même des "forces occultes" et des "sociétés secrètes" opérant dans l'ombre du pouvoir
+                    politique français, liant l'assassinat de Doumer et des rumeurs de rituels étranges au Palais de
+                    l'Élysée.
+                </p>
+                <p class="article-text">
+                    Selon ces publications, Paris serait actuellement le théâtre de luttes d'influence cachées,
+                    impliquant à la fois des radicaux politiques et des groupes aux motivations mystiques. Bien que la
+                    presse française reste plus réservée sur ces aspects, l'intérêt grandissant à l'étranger montre à
+                    quel point l'instabilité actuelle en France captive l'imaginaire collectif. Le journaliste américain
+                    Harry Grant résume la situation dans une formule marquante : "Paris semble hantée, non seulement par
+                    ses fantômes historiques, mais aussi par des ambitions contemporaines aux origines obscures."
+                </p>
+            </div>
+        </article>
+
+        <article class="article">
+            <h2 class="article-title">Violence Policière en Hausse : Témoignage d'un Syndicaliste</h2>
+            <p class="author">Robert Garnier</p>
+            <div class="article-content">
+                <p class="article-text">
+                    La tension monte dans les quartiers populaires de Paris, où les descentes de police se multiplient
+                    depuis l'assassinat de Paul Doumer. Un syndicaliste parisien, sous couvert d'anonymat, dénonce la
+                    violence croissante des interventions policières, en particulier dans les milieux ouvriers et
+                    anarchistes.
+                </p>
+                <blockquote>
+                    "Depuis la mort de Doumer, la répression s'est intensifiée," affirme-t-il. "Les descentes sont
+                    brutales, et la police n'hésite plus à s'en prendre aux ouvriers sans preuve. Ils se présentent en
+                    pleine nuit, bousculent nos camarades et saisissent des documents sans justification. On dirait
+                    qu'ils cherchent des boucs émissaires."
+                </blockquote>
+                <p class="article-text">
+                    Le syndicaliste avertit également que cette politique de répression pourrait radicaliser les milieux
+                    populaires, déjà méfiants envers les forces de l'ordre. Plusieurs organisations ouvrières et
+                    syndicales appellent au calme, mais les témoignages de brutalité policière ne cessent de
+                    s'accumuler. La colère gronde, et certains redoutent que ces méthodes n'enveniment davantage la
+                    situation dans la capitale.
+                </p>
+            </div>
+        </article>
+    </div>
+</div>
+</body>
+</html>
